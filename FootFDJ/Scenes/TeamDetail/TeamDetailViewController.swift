@@ -8,66 +8,78 @@
 
 import UIKit
 
-protocol TeamDetailDisplayLogic: class
-{
-    func displaySomething(viewModel: TeamDetail.Something.ViewModel)
+protocol TeamDetailDisplayLogic: class {
+    func showPlayers(_ viewModel: TeamDetail.getPlayers.ViewModel)
+    func showError(_ error: Error)
 }
 
 class TeamDetailViewController: UIViewController, TeamDetailDisplayLogic
 {
     @IBOutlet private weak var playerTableView: UITableView!
     
-    var interactor: TeamDetailBusinessLogic?
-    var router: (NSObjectProtocol & TeamDetailRoutingLogic & TeamDetailDataPassing)?
-    
-    // MARK: Setup
-    
-    private func setup()
-    {
-        let viewController = self
-        let interactor = TeamDetailInteractor()
-        let presenter = TeamDetailPresenter()
-        let router = TeamDetailRouter()
-        viewController.interactor = interactor
-        viewController.router = router
-        interactor.presenter = presenter
-        presenter.viewController = viewController
-        router.viewController = viewController
-        router.dataStore = interactor
-    }
-    
-    // MARK: Routing
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
+    var players: [TeamDetail.getPlayers.ViewModel.Player] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.playerTableView.reloadData()
             }
         }
     }
+    var team: Team?
+    var interactor: TeamDetailBusinessLogic?
     
     // MARK: View lifecycle
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
+        title = team?.teamName
+        getPlayers()
+        setupPlayerTableView()
     }
     
-    // MARK: Do something
-    
-    //@IBOutlet weak var nameTextField: UITextField!
-    
-    func doSomething()
-    {
-        let request = TeamDetail.Something.Request()
-        interactor?.doSomething(request: request)
+    func setupPlayerTableView() {
+        playerTableView.dataSource = self
+        playerTableView.register(UINib(nibName: PlayerViewCell.typeName, bundle: nil), forCellReuseIdentifier: PlayerViewCell.typeName)
+        playerTableView.rowHeight = 120
     }
     
-    func displaySomething(viewModel: TeamDetail.Something.ViewModel)
-    {
-        //nameTextField.text = viewModel.name
+    func getPlayers() {
+        guard let team = team else {
+            assertionFailure("Team detail doesnt work without a team")
+            return
+        }
+        interactor?.getPlayers(request: .init(teamName: team.teamName))
     }
+    
+    func showPlayers(_ viewModel: TeamDetail.getPlayers.ViewModel) {
+        players = viewModel.players
+    }
+    
+    func showError(_ error: Error) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "An error occured", message: error.localizedDescription, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+}
+
+extension TeamDetailViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return players.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PlayerViewCell.typeName, for: indexPath) as? PlayerViewCell else {
+            fatalError("\(PlayerViewCell.typeName) not found")
+        }
+        cell.setup(with: players[indexPath.row])
+        return cell
+    }    
 }

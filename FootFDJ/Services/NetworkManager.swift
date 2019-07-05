@@ -22,7 +22,7 @@ enum FDJURLBuilder {
         case .teams(let search):
             return URL(string: "\(baseUrl)search_all_teams.php?l=\(search.replacingOccurrences(of: " ", with: "%20"))")!
         case .players(let team):
-            return URL(string: "\(baseUrl)searchplayers.php?t=\(team)")!
+            return URL(string: "\(baseUrl)searchplayers.php?t=\(team.replacingOccurrences(of: " ", with: "%20"))")!
         }
     }
 }

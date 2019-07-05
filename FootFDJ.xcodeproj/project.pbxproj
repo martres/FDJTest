@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08A7C5BB8CFCFD78E1F0B8CF /* Pods_FootFDJ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B0DA2B90960275C9FF59CB /* Pods_FootFDJ.framework */; };
+		6568F91522CF640E00ABE40A /* TeamDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6568F91422CF640E00ABE40A /* TeamDetailBuilder.swift */; };
 		65869A7222CCB9A500D2424B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65869A7122CCB9A500D2424B /* AppDelegate.swift */; };
 		65869A7922CCB9A600D2424B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65869A7822CCB9A600D2424B /* Assets.xcassets */; };
 		65869A7C22CCB9A600D2424B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65869A7A22CCB9A600D2424B /* LaunchScreen.storyboard */; };
@@ -23,7 +25,6 @@
 		65869AB222CCC90800D2424B /* TeamListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65869AAC22CCC90800D2424B /* TeamListInteractor.swift */; };
 		65869ABB22CCC93900D2424B /* TeamDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65869AB522CCC93900D2424B /* TeamDetailPresenter.swift */; };
 		65869ABC22CCC93900D2424B /* TeamDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65869AB622CCC93900D2424B /* TeamDetailWorker.swift */; };
-		65869ABD22CCC93900D2424B /* TeamDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65869AB722CCC93900D2424B /* TeamDetailRouter.swift */; };
 		65869ABE22CCC93900D2424B /* TeamDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65869AB822CCC93900D2424B /* TeamDetailModels.swift */; };
 		65869ABF22CCC93900D2424B /* TeamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65869AB922CCC93900D2424B /* TeamDetailViewController.swift */; };
 		65869AC022CCC93900D2424B /* TeamDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65869ABA22CCC93900D2424B /* TeamDetailInteractor.swift */; };
@@ -56,6 +57,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		44BE1F0F7FE3748920337F51 /* Pods-FootFDJ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootFDJ.release.xcconfig"; path = "Pods/Target Support Files/Pods-FootFDJ/Pods-FootFDJ.release.xcconfig"; sourceTree = "<group>"; };
+		55B0DA2B90960275C9FF59CB /* Pods_FootFDJ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FootFDJ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6568F91422CF640E00ABE40A /* TeamDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailBuilder.swift; sourceTree = "<group>"; };
 		65869A6E22CCB9A500D2424B /* FootFDJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootFDJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65869A7122CCB9A500D2424B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65869A7822CCB9A600D2424B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,7 +82,6 @@
 		65869AAC22CCC90800D2424B /* TeamListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListInteractor.swift; sourceTree = "<group>"; };
 		65869AB522CCC93900D2424B /* TeamDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailPresenter.swift; sourceTree = "<group>"; };
 		65869AB622CCC93900D2424B /* TeamDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailWorker.swift; sourceTree = "<group>"; };
-		65869AB722CCC93900D2424B /* TeamDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailRouter.swift; sourceTree = "<group>"; };
 		65869AB822CCC93900D2424B /* TeamDetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailModels.swift; sourceTree = "<group>"; };
 		65869AB922CCC93900D2424B /* TeamDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailViewController.swift; sourceTree = "<group>"; };
 		65869ABA22CCC93900D2424B /* TeamDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailInteractor.swift; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		65869AD422CE57F700D2424B /* TeamListViewController+Completion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TeamListViewController+Completion.swift"; sourceTree = "<group>"; };
 		65869AD722CE5F7100D2424B /* PlayerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewCell.swift; sourceTree = "<group>"; };
 		65869AD822CE5F7100D2424B /* PlayerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewCell.xib; sourceTree = "<group>"; };
+		C9B3DB64F1E9E22C49B0EA9B /* Pods-FootFDJ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootFDJ.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FootFDJ/Pods-FootFDJ.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08A7C5BB8CFCFD78E1F0B8CF /* Pods_FootFDJ.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +123,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01B5B1C91B2151312C108672 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55B0DA2B90960275C9FF59CB /* Pods_FootFDJ.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		65869A6522CCB9A500D2424B = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +138,8 @@
 				65869A8522CCB9A600D2424B /* FootFDJTests */,
 				65869A9022CCB9A700D2424B /* FootFDJUITests */,
 				65869A6F22CCB9A500D2424B /* Products */,
+				BFC8516250CECE3C5A90F698 /* Pods */,
+				01B5B1C91B2151312C108672 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -213,10 +228,10 @@
 				65869AD622CE5F4800D2424B /* UI */,
 				65869AB522CCC93900D2424B /* TeamDetailPresenter.swift */,
 				65869AB622CCC93900D2424B /* TeamDetailWorker.swift */,
-				65869AB722CCC93900D2424B /* TeamDetailRouter.swift */,
 				65869AB822CCC93900D2424B /* TeamDetailModels.swift */,
 				65869AB922CCC93900D2424B /* TeamDetailViewController.swift */,
 				65869ABA22CCC93900D2424B /* TeamDetailInteractor.swift */,
+				6568F91422CF640E00ABE40A /* TeamDetailBuilder.swift */,
 			);
 			path = TeamDetail;
 			sourceTree = "<group>";
@@ -255,6 +270,15 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		BFC8516250CECE3C5A90F698 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C9B3DB64F1E9E22C49B0EA9B /* Pods-FootFDJ.debug.xcconfig */,
+				44BE1F0F7FE3748920337F51 /* Pods-FootFDJ.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -262,9 +286,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65869A9622CCB9A700D2424B /* Build configuration list for PBXNativeTarget "FootFDJ" */;
 			buildPhases = (
+				18E58AAAAF702A88F65C6520 /* [CP] Check Pods Manifest.lock */,
 				65869A6A22CCB9A500D2424B /* Sources */,
 				65869A6B22CCB9A500D2424B /* Frameworks */,
 				65869A6C22CCB9A500D2424B /* Resources */,
+				4EA4425416AF5E35A5E5035E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -383,6 +409,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		18E58AAAAF702A88F65C6520 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FootFDJ-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4EA4425416AF5E35A5E5035E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FootFDJ/Pods-FootFDJ-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FootFDJ/Pods-FootFDJ-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		65869A6A22CCB9A500D2424B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -392,7 +465,6 @@
 				65869AD522CE57F700D2424B /* TeamListViewController+Completion.swift in Sources */,
 				65869AAF22CCC90800D2424B /* TeamListRouter.swift in Sources */,
 				65869ABF22CCC93900D2424B /* TeamDetailViewController.swift in Sources */,
-				65869ABD22CCC93900D2424B /* TeamDetailRouter.swift in Sources */,
 				65869AB222CCC90800D2424B /* TeamListInteractor.swift in Sources */,
 				65869AA322CCBED800D2424B /* League.swift in Sources */,
 				65869AA522CCBEE200D2424B /* Player.swift in Sources */,
@@ -403,6 +475,7 @@
 				65869ABE22CCC93900D2424B /* TeamDetailModels.swift in Sources */,
 				65869AD122CCE9F100D2424B /* NetworkManager.swift in Sources */,
 				65869AC322CCD5E800D2424B /* TeamListBuilder.swift in Sources */,
+				6568F91522CF640E00ABE40A /* TeamDetailBuilder.swift in Sources */,
 				65869AAD22CCC90800D2424B /* TeamListPresenter.swift in Sources */,
 				65869AB122CCC90800D2424B /* TeamListViewController.swift in Sources */,
 				65869AD922CE5F7100D2424B /* PlayerViewCell.swift in Sources */,
@@ -574,6 +647,7 @@
 		};
 		65869A9722CCB9A700D2424B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9B3DB64F1E9E22C49B0EA9B /* Pods-FootFDJ.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -592,6 +666,7 @@
 		};
 		65869A9822CCB9A700D2424B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44BE1F0F7FE3748920337F51 /* Pods-FootFDJ.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

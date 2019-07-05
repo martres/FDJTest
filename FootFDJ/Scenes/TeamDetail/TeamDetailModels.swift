@@ -12,16 +12,26 @@ enum TeamDetail
 {
   // MARK: Use cases
   
-  enum Something
+  enum getPlayers
   {
-    struct Request
-    {
+    struct Request {
+        var teamName: String
     }
-    struct Response
-    {
+    
+    struct Response {
+        var players: [Player]
     }
-    struct ViewModel
-    {
+    
+    struct ViewModel {
+        var players: [Player]
+        
+        struct Player {
+            let name: String
+            let pictureURL: String?
+            let position: String
+            let price: String
+            let birthDate: String
+        }
     }
   }
 }

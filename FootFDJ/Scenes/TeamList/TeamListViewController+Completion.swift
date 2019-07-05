@@ -31,9 +31,10 @@ extension TeamListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let name = leagues[indexPath.row].name
-        tableView.isHidden = true
-        searchController.searchBar.text = name
         interactor?.getTeams(request: .init(nameLeague: name))
+        searchController.isActive = false
+        searchController.searchBar.text = name
+        tableView.isHidden = true
     }
     
 }

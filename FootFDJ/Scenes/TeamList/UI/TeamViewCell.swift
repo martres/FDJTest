@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class TeamViewCell: UICollectionViewCell {
     
@@ -15,5 +16,17 @@ class TeamViewCell: UICollectionViewCell {
     
     func setup(_ team: TeamList.getTeams.ViewModel.Team) {
         name.text = team.name
+        let url = URL(string: team.urlLogo)
+        let processor = DownsamplingImageProcessor(size: logo.frame.size)
+        logo.kf.indicatorType = .activity
+        logo.kf.setImage(
+            with: url,
+            placeholder: UIImage(named: "placeholder_team"),
+            options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
     }
 }

@@ -86,22 +86,12 @@ class TeamListViewController: UIViewController, TeamListDisplayLogic {
     }
     
     func showError(_ error: Error) {
-        let alert = UIAlertController(title: "An error occured", message: error.localizedDescription, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-            alert.dismiss(animated: true, completion: nil)
-        }))
-        present(alert, animated: true, completion: nil)
-    }
-    
-    // MARK: Routing
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "An error occured", message: error.localizedDescription, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+           self.present(alert, animated: true, completion: nil)
         }
     }
 }
@@ -137,7 +127,19 @@ extension TeamListViewController: UICollectionViewDataSource {
 extension TeamListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let team = teams[indexPath.row]
+        interactor?.setSelectedTeam(at: indexPath.row)
+        router?.showTeamDetail()
+    }
+    
+}
+
+extension TeamListViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let padding: CGFloat =  20
+        let collectionViewSize = collectionView.frame.size.width - padding
+        
+        return CGSize(width: collectionViewSize / 2, height: collectionViewSize / 2)
     }
     
 }

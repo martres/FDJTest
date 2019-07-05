@@ -8,29 +8,23 @@
 
 import UIKit
 
-protocol TeamDetailBusinessLogic
-{
-    func doSomething(request: TeamDetail.Something.Request)
+protocol TeamDetailBusinessLogic {
+    func getPlayers(request: TeamDetail.getPlayers.Request)
 }
 
-protocol TeamDetailDataStore
-{
-    //var name: String { get set }
-}
-
-class TeamDetailInteractor: TeamDetailBusinessLogic, TeamDetailDataStore {
+class TeamDetailInteractor: TeamDetailBusinessLogic {
     
     var presenter: TeamDetailPresentationLogic?
     var worker: TeamDetailWorker?
     
-    // MARK: Do something
-    
-    func doSomething(request: TeamDetail.Something.Request)
-    {
+    func getPlayers(request: TeamDetail.getPlayers.Request) {
         worker = TeamDetailWorker()
-        worker?.doSomeWork()
-        
-        let response = TeamDetail.Something.Response()
-        presenter?.presentSomething(response: response)
+        worker?.getPlayers(for: request.teamName) { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .failure(let error): self.presenter?.showError(error)
+            case .success(let players): self.presenter?.showPlayers(.init(players: players))
+            }
+        }
     }
 }

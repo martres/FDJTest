@@ -8,20 +8,27 @@
 
 import UIKit
 
-protocol TeamDetailPresentationLogic
-{
-  func presentSomething(response: TeamDetail.Something.Response)
+protocol TeamDetailPresentationLogic {
+    func showPlayers(_ response: TeamDetail.getPlayers.Response)
+    func showError(_ error: Error)
 }
 
-class TeamDetailPresenter: TeamDetailPresentationLogic
-{
-  weak var viewController: TeamDetailDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: TeamDetail.Something.Response)
-  {
-    let viewModel = TeamDetail.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+class TeamDetailPresenter: TeamDetailPresentationLogic {
+    
+    weak var viewController: TeamDetailDisplayLogic?
+    
+    func showPlayers(_ response: TeamDetail.getPlayers.Response) {
+        let players = response.players.map {
+            TeamDetail.getPlayers.ViewModel.Player(name: $0.name,
+                                                   pictureURL: $0.getPicture(),
+                                                   position: $0.position,
+                                                   price: $0.price,
+                                                   birthDate: $0.birthDate) }
+        viewController?.showPlayers(.init(players: players))
+    }
+    
+    func showError(_ error: Error) {
+        viewController?.showError(error)
+    }
+    
 }

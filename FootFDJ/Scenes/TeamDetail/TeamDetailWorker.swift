@@ -8,9 +8,19 @@
 
 import UIKit
 
-class TeamDetailWorker
-{
-  func doSomeWork()
-  {
-  }
+typealias PlayerFetcher = NetworkManager<Players>
+typealias PlayerResult = Result<[Player], Error>
+
+class TeamDetailWorker {
+    
+    lazy var playersFetcher = PlayerFetcher()
+    
+    func getPlayers(for teamName: String, completion: @escaping (PlayerResult) -> ()) {
+        playersFetcher.fetchData(.players(teamName)) { result in
+            switch result {
+            case .success(let players): completion(.success(players.player))
+            case .failure(let error): completion(.failure(error))
+            }
+        }
+    }
 }
