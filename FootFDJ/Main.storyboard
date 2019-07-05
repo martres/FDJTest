@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vha-jF-OLf">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Team List View Controller-->
+        <scene sceneID="ebH-65-xD1">
+            <objects>
+                <viewController storyboardIdentifier="TeamListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vha-jF-OLf" customClass="TeamListViewController" customModule="FootFDJ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wvp-vb-QT5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MrD-4T-Pxa">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vR0-gJ-4Ls">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aJ3-cy-Ha5">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.82220829920000005" green="0.82220829920000005" blue="0.82220829920000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bcr-Zi-ozz" firstAttribute="bottom" secondItem="MrD-4T-Pxa" secondAttribute="bottom" id="1yW-6I-HDv"/>
+                            <constraint firstItem="aJ3-cy-Ha5" firstAttribute="top" secondItem="bcr-Zi-ozz" secondAttribute="top" id="JtN-PI-EFG"/>
+                            <constraint firstItem="MrD-4T-Pxa" firstAttribute="leading" secondItem="bcr-Zi-ozz" secondAttribute="leading" id="SET-lc-eoc"/>
+                            <constraint firstItem="bcr-Zi-ozz" firstAttribute="trailing" secondItem="MrD-4T-Pxa" secondAttribute="trailing" id="l9d-xW-972"/>
+                            <constraint firstItem="aJ3-cy-Ha5" firstAttribute="leading" secondItem="bcr-Zi-ozz" secondAttribute="leading" constant="20" id="mtn-wr-yvo"/>
+                            <constraint firstItem="aJ3-cy-Ha5" firstAttribute="height" secondItem="MrD-4T-Pxa" secondAttribute="height" id="p0c-eD-KjR"/>
+                            <constraint firstItem="MrD-4T-Pxa" firstAttribute="top" secondItem="bcr-Zi-ozz" secondAttribute="top" id="tsG-b4-a4a"/>
+                            <constraint firstItem="bcr-Zi-ozz" firstAttribute="trailing" secondItem="aJ3-cy-Ha5" secondAttribute="trailing" constant="20" id="ztB-mY-RdL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bcr-Zi-ozz"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lnh-7H-iCr"/>
+                    <connections>
+                        <outlet property="completionTableView" destination="aJ3-cy-Ha5" id="cfn-Hm-7rt"/>
+                        <outlet property="teamsCollectionView" destination="MrD-4T-Pxa" id="0Go-Vd-bNS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nD0-kX-FKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565" y="149"/>
+        </scene>
+        <!--Team Detail View Controller-->
+        <scene sceneID="Eih-i4-32O">
+            <objects>
+                <viewController storyboardIdentifier="TeamDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CIK-zt-Xzo" customClass="TeamDetailViewController" customModule="FootFDJ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NIo-yF-5NK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3bh-Mp-owY">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3bh-Mp-owY" firstAttribute="leading" secondItem="7Mr-2y-zKL" secondAttribute="leading" id="15Q-Ll-jDg"/>
+                            <constraint firstItem="7Mr-2y-zKL" firstAttribute="bottom" secondItem="3bh-Mp-owY" secondAttribute="bottom" id="HFj-eo-ky4"/>
+                            <constraint firstItem="7Mr-2y-zKL" firstAttribute="trailing" secondItem="3bh-Mp-owY" secondAttribute="trailing" id="R28-IQ-OIF"/>
+                            <constraint firstItem="3bh-Mp-owY" firstAttribute="top" secondItem="7Mr-2y-zKL" secondAttribute="top" id="V45-E3-7n3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7Mr-2y-zKL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uoq-t3-EKQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1326" y="149"/>
+        </scene>
+    </scenes>
+</document>
